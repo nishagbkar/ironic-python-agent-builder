@@ -73,8 +73,8 @@ fi
 mkdir -p "$BUILDDIR/tmp/localpip"
 
 # Download IPA and requirements
-export IPADIR=/home/nisha/Outreachy/ironic-python-agent
-cd $IPADIR
+IPA_SOURCE_DIR=${IPA_SOURCE_DIR:-/opt/stack/ironic-python-agent}
+cd $IPA_SOURCE_DIR
 rm -rf *.egg-info
 pwd
 python setup.py sdist --dist-dir "$BUILDDIR/tmp/localpip" --quiet
